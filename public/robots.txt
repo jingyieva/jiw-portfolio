@@ -1,0 +1,6 @@
+:where(a, button, [role="button"]) {
+  outline-offset: 2px;
+}
+:where(a, button, [role="button"]):focus-visible {
+  outline: 2px solid var(--color-brand-600);
+}

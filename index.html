@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jing I Wu — Frontend Engineer</title>
+    <meta name="description"
+        content="Frontend Engineer Portfolio—React, Tailwind, Data Viz. 二手交易儀表板、React Gridstack Dashboard 等作品展示" />
+    <meta property="og:title" content="Jing I Wu — Frontend Engineer" />
+    <meta property="og:description" content="React / Tailwind / Data Viz. 作品集與經歷" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="canonical" href="https://你的網域/" />
+    <script>
+        (function () {
+            const STORAGE_KEY = 'theme';
+            const user = localStorage.getItem(STORAGE_KEY);
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = user || (systemDark ? 'dark' : 'light');
+            if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            } else {
+            document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-white/90 dark:focus:bg-gray-900/90 focus:px-3 focus:py-2 focus:rounded-md">
+        Skip to content
+    </a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
