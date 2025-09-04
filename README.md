@@ -1,15 +1,14 @@
 # Jing I Wu — Portfolio
 
 個人作品集網站，展示工作經歷、技能與近期專案。  
-[Demo 網址 (Vercel)](https://你的網址.vercel.app) （部署完成後更新這裡）
+[Demo 網址 (Vercel)](https://jiw-portfolio.vercel.app) （部署完成後更新這裡）
 
 ---
 
 ## 🚀 技術組合
 
-- **Framework**: React 18 + React Router
+- **Framework**: React 19 + React Router
 - **Styling**: Tailwind CSS 4.x, shadcn/ui
-- **Animation**: Framer Motion
 - **Charts**: Highcharts (工作經驗), Recharts / Chart.js (Side Projects)
 - **Build Tool**: Vite + pnpm
 - **Deployment**: Vercel
