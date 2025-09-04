@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { IconGithub as Github, IconLinkedIn  as Linkedin , IconMail as Mail} from "@/components/icons";
+import { IconGithub as Github, IconLinkedIn  as Linkedin , IconMail as Mail} from "@/components/Icons";
 
 import { CONTACT_INFO } from "@/constants"
 
