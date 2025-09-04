@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <section className="container py-12 md:py-20">
             <div className="flex flex-col-reverse md:flex-row md:items-center gap-8">
-                <div className="md:flex-2text-center md:text-left">
+                <div className="md:flex-2 text-center md:text-left">
                     <motion.h1
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
