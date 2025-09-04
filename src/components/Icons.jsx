@@ -26,3 +26,21 @@ export const IconMail = (props) => (
     <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
   </svg>
 );
+
+export const IconHome = (props) => (
+  <svg viewBox="0 0 24 24" className={props.className} fill="currentColor">
+    <path d="M3 9.75L12 3l9 6.75V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1V9.75z"/>
+  </svg>
+);
+
+export const IconUser = (props) => (
+  <svg viewBox="0 0 24 24" className={props.className} fill="currentColor">
+    <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+  </svg>
+);
+
+export const IconWork = (props) => (
+  <svg viewBox="0 0 24 24" className={props.className} fill="currentColor">
+    <path d="M4 7V5a2 2 0 0 1 2-2h4V1h4v2h4a2 2 0 0 1 2 2v2h-2V5H6v2H4zm16 2H4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+  </svg>
+);
