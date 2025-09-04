@@ -9,8 +9,8 @@ import { CONTACT_INFO } from "@/constants"
 export default function Home() {
     return (
         <section className="container py-12 md:py-20">
-            <div className="grid md:grid-cols-3 gap-10 items-center">
-                <div className="md:col-span-2">
+            <div className="flex flex-col-reverse md:flex-row md:items-center gap-8">
+                <div className="md:flex-2text-center md:text-left">
                     <motion.h1
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Home() {
                         專長 React / Tailwind / Data Viz。<br />近期重點：
                         二手交易分析儀表板（Recharts）與 React Gridstack Dashboard。
                     </p>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center flex-wrap justify-center md:justify-start gap-3">
                         <Button asChild>
                             <Link to="/projects">查看作品集</Link>
                         </Button>
@@ -39,7 +39,7 @@ export default function Home() {
                         </Button>
                     </div>
                 </div>
-                <div className="flex justify-center">
+                <div className="md:flex-1 flex md:justify-end justify-center">
                     <img 
                         src="/avatar.jpg" alt="Avatar" 
                         width="160" height="160"
