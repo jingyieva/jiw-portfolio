@@ -10,7 +10,7 @@ export const projects = [
         title: 'React Gridstack Dashboard',
         description: '以 Gridstack 實作可拖拽/縮放的儀表板佈局，支援多卡片與持久化配置。',
         tags: ['React', 'Gridstack', 'Dashboard'],
-        demo: 'https://你的-gridstack-demo.com',
+        demo: 'https://react-gridstack-dashboard.vercel.app',
         repo: 'https://github.com/jingyieva/react-gridstack-dashboard',
     },
 ]
