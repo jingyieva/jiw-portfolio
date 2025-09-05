@@ -49,42 +49,48 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="mt-14 grid md:grid-cols-3 gap-6">
-                <Card>
-                    <CardHeader className="pb-2">
-                        <h3 className="font-semibold">工作經歷 Highlights</h3>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                        <ul className="list-disc list-inside text-sm opacity-80 space-y-1">
-                            <li>前端工程｜React、Tailwind、shadcn/ui</li>
-                            <li>資料視覺化｜Chart.js / Recharts 儀表板</li>
-                            <li>自動化佈署｜semantic-release + GitHub Actions</li>
-                        </ul>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader className="pb-2">
-                        <h3 className="font-semibold">技術專長</h3>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                        <p className="text-sm opacity-80">
-                            React／Tailwind／Jest／Vite<br/>熟悉設計到落地的快速迭代流程
-                        </p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="pb-2">
-                        <h3 className="font-semibold">聯絡方式</h3>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                        <ul className="text-sm opacity-80 list-disc list-inside space-y-1">
-                            <li>{`Email：${CONTACT_INFO.email}`}</li>
-                            <li>{`LinkedIn：${CONTACT_INFO.linkedIn}`}</li>
-                        </ul>
-                    </CardContent>
-                </Card>
-            </div>
+            <section aria-labelledby="highlights-heading" className="mt-14 grid md:grid-cols-3 gap-6 items-stretch auto-rows-fr">
+                <h2 id="highlights-heading" className="sr-only">重點資訊</h2>
+                <article aria-labelledby="work-highlight-heading" class="h-full">
+                    <Card className="h-full flex flex-col">
+                        <CardHeader className="pb-2">
+                            <h3 id="work-highlight-heading" className="font-semibold">工作經歷 Highlights</h3>
+                        </CardHeader>
+                        <CardContent className="pt-0 flex-1">
+                            <ul className="list-disc list-inside text-sm opacity-80 space-y-1">
+                                <li>前端工程｜React、Tailwind、shadcn/ui</li>
+                                <li>資料視覺化｜Chart.js / Recharts 儀表板</li>
+                                <li>自動化佈署｜semantic-release + GitHub Actions</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </article>
+                <article aria-labelledby="skill-heading" class="h-full">
+                    <Card className="h-full flex flex-col">
+                        <CardHeader className="pb-2">
+                            <h3 id="skill-heading"className="font-semibold">技術專長</h3>
+                        </CardHeader>
+                        <CardContent className="pt-0 flex-1">
+                            <p className="text-sm opacity-80">
+                                React／Tailwind／Jest／Vite<br/>熟悉設計到落地的快速迭代流程
+                            </p>
+                        </CardContent>
+                    </Card>
+                </article>
+                <article aria-labelledby="contact-heading" class="h-full">
+                    <Card className="h-full flex flex-col">
+                        <CardHeader className="pb-2">
+                            <h3 id="contact-heading" className="font-semibold">聯絡方式</h3>
+                        </CardHeader>
+                        <CardContent className="pt-0 flex-1">
+                            <ul className="text-sm opacity-80 list-disc list-inside space-y-1">
+                                <li>{`Email：${CONTACT_INFO.email}`}</li>
+                                <li>{`LinkedIn：${CONTACT_INFO.linkedIn}`}</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </article>
+            </section>
             <RecentUpdates limit={4} />
         </section>
     )
