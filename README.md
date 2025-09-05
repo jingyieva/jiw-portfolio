@@ -1,6 +1,7 @@
 # Jing I Wu — Portfolio
 
-個人作品集網站，展示工作經歷、技能與近期專案。  
+個人作品集網站，展示工作經歷、技能與近期專案。
+![Home](public/Home.png)
 [Demo 網址 (Vercel)](https://jiw-portfolio.vercel.app)
 
 ---
