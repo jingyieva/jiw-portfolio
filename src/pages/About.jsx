@@ -30,7 +30,7 @@ function Timeline({ children, delay = 0 }) {
 }
 
 
-function ExperienceItem({ title, company, period, bullets = [] }) {
+function ExperienceItem({ title, company, start, end, bullets = [] }) {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -38,6 +38,7 @@ function ExperienceItem({ title, company, period, bullets = [] }) {
         const timer = setTimeout(() => setShow(true), 50);
         return () => clearTimeout(timer);
     }, []);
+
     return (
         <motion.div
             style={{ willChange: "opacity, transform" }} // 提示 GPU
@@ -47,11 +48,28 @@ function ExperienceItem({ title, company, period, bullets = [] }) {
             className="relative pl-6"
         >
             {/* timeline dot */}
-            <span aria-hidden="true" className="absolute grid place-items-center -left-[9px] top-1 w-4 h-4 rounded-full border-2 dark:border-white border-gray-950 bg-[var(--color-brand-600)] shadow-[0_0_0_2px_rgba(255,255,255,1)] dark:shadow-[0_0_0_2px_rgba(10,10,10,1)]">
+            <span
+                aria-hidden="true"
+                className="absolute grid place-items-center -left-[9px] top-1 w-4 h-4 rounded-full border-2 dark:border-white border-gray-950 bg-[var(--color-brand-600)] shadow-[0_0_0_2px_rgba(255,255,255,1)] dark:shadow-[0_0_0_2px_rgba(10,10,10,1)]">
             </span>
-            <div className="grid grid-cols-[1fr_auto] items-start gap-3">
-                <h3 className="font-semibold">{company} — {title}</h3>
-                <span className="text-xs opacity-70">{period}</span>
+            <div className="md:grid md:grid-cols-[1fr_auto] md:items-start md:gap-3">
+                <h3 className="font-semibold text-base md:text-lg leading-snug">
+                    {company} — {title}
+                </h3>
+                <span 
+                    className="inline-flex md:block
+                        text-xs md:text-xs
+                        mt-2 md:mt-0
+                        rounded-full md:rounded-none
+                        px-2 py-0.5 md:px-0 md:py-0
+                        bg-gray-200/70 dark:bg-gray-700/60 md:bg-transparent
+                        text-gray-700 dark:text-gray-200 md:opacity-70
+                        md:self-start"
+                >
+                    <time dateTime={start}>{start}</time>
+                    <span aria-hidden="true" className="mx-1">–</span>
+                    <time dateTime={end}>{end}</time>
+                </span>
             </div>
             {bullets?.length > 0 && (
                 <ul className="list-disc list-inside text-sm opacity-90 mt-2 space-y-1">
@@ -87,7 +105,7 @@ export default function About() {
                 <CardHeader className="pb-2">
                     <h2 className="text-xl font-semibold">Skills</h2>
                 </CardHeader>
-                <CardContent className="pt-4 pb-4 md:pt-5 md:pb-5 spce-y-6">
+                <CardContent className="pt-4 pb-4 md:pt-5 md:pb-5 space-y-6">
                     {/* Work Skills */}
                     <div>
                         <h3 className="text-sm font-medium mb-3 opacity-80">Work Skills（實務應用）</h3>
@@ -122,14 +140,15 @@ export default function About() {
                 <CardContent className="pt-4 pb-4 md:pt-5 md:pb-5">
                     <Timeline>
                         {
-                            WORK_EXPERIENCES.map(({ title, company, period, content }) => (
+                            WORK_EXPERIENCES.map(({ title, company, start, end, content }) => (
 
                                 <ExperienceItem
-                                    key={`${company}#${period}`}
+                                    key={`${company}#${start}-${end}`}
                                     title={title}
                                     company={company}
-                                    period={period}
                                     bullets={content}
+                                    start={start}
+                                    end={end}
                                 />
                             ))
                         }

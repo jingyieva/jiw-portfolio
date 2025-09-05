@@ -9,7 +9,8 @@ export const WORK_EXPERIENCES = [
     {
         title: "Project Engineer / Frontend Developer",
         company: "安碁資訊股份有限公司",
-        period: "2020/02 – 2025/04",
+        start: "2020/02",
+        end: "2025/04",
         content: [
             "主導 React 前端開發，依據年度需求設計與擴充功能，建立模組化元件提升重用性與開發效率",
             "建置安全監控儀表板，整合 Highcharts，提升監控與可視化成效",
@@ -20,7 +21,8 @@ export const WORK_EXPERIENCES = [
     }, {
         title: "Technical Consultant",
         company: "鴻揚科技有限公司",
-        period: "2014/07 – 2019/07",
+        start: "2014/07",
+        end: "2019/07",
         content: [
             "使用 Vue.js 與 AngularJS 建構客戶前端與作業系統，優化操作流程與用戶體驗",
             "協助銀行與企業專案的原型設計、前端開發與 API 串接",
