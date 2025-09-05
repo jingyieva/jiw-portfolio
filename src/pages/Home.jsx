@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
                 <div className="md:flex-1 flex md:justify-end justify-center">
                     <img 
-                        src="/avatar.jpg" alt="Avatar" 
+                        src="/avatar.webp" alt="Avatar" 
                         width="160" height="160"
                         loading="lazy" decoding="async"
                         className="size-32 md:size-40 rounded-full border border-gray-200 dark:border-gray-800 object-cover" />
