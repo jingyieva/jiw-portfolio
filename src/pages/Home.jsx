@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 import { CONTACT_INFO } from "@/constants"
+import RecentUpdates from "@/components/RecentUpdates";
 
 export default function Home() {
     return (
@@ -20,8 +21,8 @@ export default function Home() {
                         Hi, I’m Jing I — Frontend Engineer
                     </motion.h1>
                     <p className="opacity-80 mb-6">
-                        專長 React / Tailwind / Data Viz。<br />近期重點：
-                        二手交易分析儀表板（Recharts）與 React Gridstack Dashboard。
+                        專精 React / Tailwind / Data Viz。<br />近期專精：
+                        二手交易分析儀表板、React Gridstack Dashboard。
                     </p>
                     <div className="flex items-center flex-wrap justify-center md:justify-start gap-3">
                         <Button asChild>
@@ -84,6 +85,7 @@ export default function Home() {
                     </CardContent>
                 </Card>
             </div>
+            <RecentUpdates limit={4} />
         </section>
     )
 }

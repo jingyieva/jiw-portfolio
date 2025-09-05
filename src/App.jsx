@@ -7,6 +7,7 @@ import NotFound from "@/pages/404";
 const Home = lazy(() => import("@/pages/Home"));
 const Projects = lazy(() => import("@/pages/Projects"));
 const About = lazy(() => import("@/pages/About"));
+const Updates = lazy(() => import("@/pages/Updates"));
 
 export default function App() {
     return (
@@ -21,7 +22,7 @@ export default function App() {
                     } />
                     <Route path="/projects" element={<Suspense fallback={<div className="p-6 opacity-70">Loading…</div>}><Projects /></Suspense>} />
                     <Route path="/about" element={<Suspense fallback={<div className="p-6 opacity-70">Loading…</div>}><About /></Suspense>} />
-
+                    <Route path="/updates" element={<Updates />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>

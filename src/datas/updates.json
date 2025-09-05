@@ -1,0 +1,114 @@
+[
+    {
+        "id": "2025-09-05-react-gridstack-dashboard-release",
+        "date": "2025-09-05",
+        "title": "Gridstack Dashboard：上線",
+        "summary": "Gridstack Dashboard Demo Release",
+        "tags": ["React", "Gridstack", "Release", "vercel"],
+        "project": "react-gridstack-dashboard",
+        "type": "release",
+        "links": [
+            {"label": "Website", "url": "https://react-gridstack-dashboard.vercel.app/"},
+            {"label": "Repo", "url": "https://github.com/jingyieva/react-gridstack-dashboard"}
+        ]
+    },
+    {
+        "id": "2025-09-04-portfolio-release",
+        "date": "2025-09-04",
+        "title": "個人Website：v1 上線",
+        "summary": "完成 Home / Projects / About，深淺色切換與 vercel 佈署。",
+        "tags": ["Portfolio", "vercel", "Tailwind"],
+        "project": "jiw-portfolio",
+        "type": "release",
+        "links": [
+            {"label": "Website", "url": "https://jiw-portfolio.vercel.app"},
+            {"label": "Repo", "url": "https://github.com/jingyieva/jiw-portfolio"}
+        ]
+    },
+    {
+        "id": "2025-08-29-2nd-track-dashboard-release",
+        "date": "2025-08-29",
+        "title": "二手交易儀表板：上線",
+        "summary": "二手交易儀表板 Demo 網站正式上線",
+        "tags": ["Release", "vercel", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "release",
+        "links": [
+            {"label": "Website", "url": "https://2nd-track-dashboard.vercel.app/"},
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+    {
+        "id": "2025-08-29-2nd-track-dashboard-feature-storybook",
+        "date": "2025-08-29",
+        "title": "二手交易儀表板：加入 Storybook",
+        "summary": "加入 Storybook",
+        "tags": ["Feature", "storybook", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "feature",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+    {
+        "id": "2025-08-29-2nd-track-dashboard-recharts-tests",
+        "date": "2025-08-29",
+        "title": "二手交易儀表板：Recharts 單元測試完成",
+        "summary": "完成 Bar / Pie / Line 與 ChartContainer 測試，強化圖表穩定度。",
+        "tags": ["recharts", "Testing", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "test",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+    {
+        "id": "2025-08-14-2nd-track-dashboard-feature-order",
+        "date": "2025-08-14",
+        "title": "二手交易儀表板：完成訂單列表",
+        "summary": "加入訂單列表檢視功能",
+        "tags": ["Feature", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "feature",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+            {
+        "id": "2025-07-31-2nd-track-dashboard-feature-home",
+        "date": "2025-07-31",
+        "title": "二手交易儀表板：加入首頁",
+        "summary": "首頁建立，加入基本數據追蹤圖表",
+        "tags": ["Feature", "Dashboard", "recharts", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "feature",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+    {
+        "id": "2025-07-21-2nd-track-dashboard-init",
+        "date": "2025-07-21",
+        "title": "二手交易儀表板專案初始化",
+        "summary": "加入二手交易儀表板專案",
+        "tags": ["Tailwind", "shadcn/ui", "recharts", "Init", "MVP"],
+        "project": "2nd-track-dashboard",
+        "type": "init",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
+        ]
+    },
+    {
+        "id": "2025-02-21-react-gridstack-dashboard-init",
+        "date": "2025-02-21",
+        "title": "Gridstack Dashboard：專案初始化",
+        "summary": "加入 Gridstack Dashboard 專案",
+        "tags": ["Gridstack.js", "Init", "MVP"],
+        "project": "react-gridstack-dashboard",
+        "type": "init",
+        "links": [
+            {"label": "Repo", "url": "https://github.com/jingyieva/react-gridstack-dashboard"}
+        ]
+    }
+
+]
