@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion'
 import { FaGithub as Github } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import { CONTACT_INFO } from "@/constants"
 import RecentUpdates from "@/components/RecentUpdates";
 
 export default function Home() {
+    const [t] = useTranslation();
     return (
         <section className="container py-12 md:py-20">
             <div className="flex flex-col-reverse md:flex-row md:items-center gap-8">
@@ -18,24 +20,23 @@ export default function Home() {
                         transition={{ duration: 0.5 }}
                         className="text-3xl md:text-4xl font-bold tracking-tight mb-3"
                     >
-                        Hi, I’m Jing I — Frontend Engineer
+                        {t('hero.title')}
                     </motion.h1>
                     <p className="opacity-80 mb-6">
-                        專精 React / Tailwind / Data Viz。<br />近期專精：
-                        二手交易分析儀表板、React Gridstack Dashboard。
+                        {t('hero.desc.1')}<br />{t('hero.desc.2')}
                     </p>
                     <div className="flex items-center flex-wrap justify-center md:justify-start gap-3">
                         <Button asChild>
-                            <Link to="/projects">查看作品集</Link>
+                            <Link to="/projects">{t('cta.projects')}</Link>
                         </Button>
                         <Button variant="secondary" asChild>
-                            <Link to="/about">關於我</Link>
+                            <Link to="/about">{t('cta.about')}</Link>
                         </Button>
 
                         <Button variant="ghost" asChild className="gap-2">
                             <a href={CONTACT_INFO.github} target="_blank" rel="noreferrer">
                                 <Github className="w-4 h-4" />
-                                GitHub
+                                {t('cta.github')}
                             </a>
                         </Button>
                     </div>
@@ -50,42 +51,44 @@ export default function Home() {
             </div>
 
             <section aria-labelledby="highlights-heading" className="mt-14 grid md:grid-cols-3 gap-6 items-stretch auto-rows-fr">
-                <h2 id="highlights-heading" className="sr-only">重點資訊</h2>
-                <article aria-labelledby="work-highlight-heading" class="h-full">
+                <h2 id="highlights-heading" className="sr-only">{t('home.highlights.heading')}</h2>
+                <article aria-labelledby="work-highlight-heading" className="h-full">
                     <Card className="h-full flex flex-col">
                         <CardHeader className="pb-2">
-                            <h3 id="work-highlight-heading" className="font-semibold">工作經歷 Highlights</h3>
+                            <h3 id="work-highlight-heading" className="font-semibold">{t('home.highlights')}</h3>
                         </CardHeader>
                         <CardContent className="pt-0 flex-1">
                             <ul className="list-disc list-inside text-sm opacity-80 space-y-1">
-                                <li>前端工程｜React、Tailwind、shadcn/ui</li>
-                                <li>資料視覺化｜Chart.js / Recharts 儀表板</li>
-                                <li>自動化佈署｜semantic-release + GitHub Actions</li>
+                                {
+                                    t('home.highlights.items', { returnObjects: true })?.map((item, i) => (
+                                        <li key={`highlight-item-${i}`}>{item}</li>
+                                    ))
+                                }
                             </ul>
                         </CardContent>
                     </Card>
                 </article>
-                <article aria-labelledby="skill-heading" class="h-full">
+                <article aria-labelledby="skill-heading" className="h-full">
                     <Card className="h-full flex flex-col">
                         <CardHeader className="pb-2">
-                            <h3 id="skill-heading"className="font-semibold">技術專長</h3>
+                            <h3 id="skill-heading"className="font-semibold">{t('home.skills')}</h3>
                         </CardHeader>
                         <CardContent className="pt-0 flex-1">
                             <p className="text-sm opacity-80">
-                                React／Tailwind／Jest／Vite<br/>熟悉設計到落地的快速迭代流程
+                                {t('home.skills.desc')}
                             </p>
                         </CardContent>
                     </Card>
                 </article>
-                <article aria-labelledby="contact-heading" class="h-full">
+                <article aria-labelledby="contact-heading" className="h-full">
                     <Card className="h-full flex flex-col">
                         <CardHeader className="pb-2">
-                            <h3 id="contact-heading" className="font-semibold">聯絡方式</h3>
+                            <h3 id="contact-heading" className="font-semibold">{t('home.contact')}</h3>
                         </CardHeader>
                         <CardContent className="pt-0 flex-1">
                             <ul className="text-sm opacity-80 list-disc list-inside space-y-1">
-                                <li>{`Email：${CONTACT_INFO.email}`}</li>
-                                <li>{`LinkedIn：${CONTACT_INFO.linkedIn}`}</li>
+                                <li>{t('home.contact.email', { email: CONTACT_INFO.email })}</li>
+                                <li>{t('home.contact.linkedin', { url: CONTACT_INFO.linkedIn })}</li>
                             </ul>
                         </CardContent>
                     </Card>

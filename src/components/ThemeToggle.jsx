@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 
 import { Sun, Moon } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
+import ButtonSegmented from "@/components/ButtonSegmented";
 
 const STORAGE_KEY = "theme";
 
@@ -35,8 +36,22 @@ export default function ThemeToggle() {
     }, []);
 
     return (
-        <Button variant="ghost" size="icon" onClick={toggle} aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </Button>
+        <>
+            {/* Mobile */}
+            <ButtonSegmented 
+                displayClassname="md:hidden mt-2"  
+                value={theme} // "light" | "dark"
+                onChange={(v) => { setTheme(v); setOpen(false); }}
+                options={[
+                    { value: "light", label: "Light", icon: <Sun className="w-5 h-5" /> },
+                    { value: "dark",  label: "Dark",  icon: <Moon className="w-5 h-5" /> },
+                ]}
+            />
+
+            {/* Desktop */}
+            <Button variant="ghost" size="icon" onClick={toggle} aria-label="Toggle theme" className="hidden md:flex ">
+                {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </Button>
+        </>
     );
 }

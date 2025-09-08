@@ -1,0 +1,27 @@
+{
+    "title": "Project",
+    "projects": [
+        {
+            "title": "Secondhand Trading Dashboard",
+            "description": "A data visualization dashboard for secondhand trading platform, built with React and Recharts.",
+            "tags": [
+                "React",
+                "Recharts",
+                "Tailwind CSS"
+            ],
+            "demo": "https: //2nd-track-dashboard.vercel.app",
+            "repo": "https: //github.com/jingyieva/2nd_track_dashboard"
+        },
+        {
+            "title": "React Gridstack Dashboard",
+            "description": "A customizable dashboard using React and Gridstack.js, allowing users to drag and resize widgets.",
+            "tags": [
+                "React",
+                "Gridstack.js",
+                "Tailwind CSS"
+            ],
+            "demo": "https: //react-gridstack-dashboard.vercel.app",
+            "repo": "https: //github.com/jingyieva/react-gridstack-dashboard"
+        }
+    ]
+}

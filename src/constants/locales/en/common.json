@@ -1,0 +1,41 @@
+{
+    "nav.header": "Jing I Wu",
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.projects": "Projects",
+
+    "hero.title": "Hi, I’m Jing I — Frontend Engineer",
+    "hero.desc.1": "Specialized in React / Tailwind / Data Viz.",
+    "hero.desc.2": "Recent projects: Secondhand Trading Dashboard (Recharts) and React Gridstack Dashboard.",
+    "cta.projects": "View Projects",
+    "cta.about": "About",
+    "cta.github": "GitHub",
+    "cta.resume": "Resume (PDF)",
+
+    "home.highlights.heading": "Highlights",
+    "home.highlights": "Career Highlights",
+    "home.highlights.items": [
+      "Frontend Engineering | React, Tailwind, shadcn/ui",
+      "Data Visualization | Chart.js / Recharts dashboards",
+      "Automation & Deployment | semantic-release + GitHub Actions"
+    ],
+
+    "home.skills": "Core Skills",
+    "home.skills.desc": "React / Tailwind / Jest / Vite\nProficient in rapid iteration from design to delivery",
+
+    "home.contact": "Contact",
+    "home.contact.email": "Email: {{email}}",
+    "home.contact.linkedin": "LinkedIn: {{url}}",
+    "home.recentUpdate": "Latest Posts",
+    "home.recentUpdate.all": "All",
+
+    "about.desc.1": "I'm Jing I. Specialized in React / Tailwind / shadcn/ui and Daia Viz.",
+    "about.desc.2": "Recent work includes Secondhand Trading Dashboard (Recharts) and Gridstack Dashboard.",    
+    "about.skills": "Skills",
+    "about.skills.work": "Work Skills",
+    "about.skills.self": "Exploration / Side Projects",
+    "about.work": "Work Experience",
+    "about.work.period": "{{start}} – {{end}}",
+
+    "footer.rights": "All rights reserved."
+}

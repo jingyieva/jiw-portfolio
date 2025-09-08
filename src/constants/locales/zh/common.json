@@ -1,0 +1,41 @@
+{
+    "nav.header": "Jing I Wu",
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.projects": "Projects",
+    
+    "hero.title": "Hi, I’m Jing I — Frontend Engineer",
+    "hero.desc.1": "專長 React / Tailwind / Data Viz。",
+    "hero.desc.2": "近期重點：二手交易分析儀表板（Recharts）與 React Gridstack Dashboard。",
+    "cta.projects": "查看作品集",
+    "cta.about": "關於我",
+    "cta.github": "GitHub",
+    "cta.resume": "查看履歷 (PDF)",
+    
+    "home.highlights.heading": "重點資訊",
+    "home.highlights": "工作經歷 Highlights",
+    "home.highlights.items": [
+        "前端工程｜React、Tailwind、shadcn/ui",
+        "資料視覺化｜Chart.js / Recharts 儀表板",
+        "自動化佈署｜semantic-release + GitHub Actions"
+    ],
+
+    "home.skills": "技術專長",
+    "home.skills.desc": "React / Tailwind / Jest / Vite\n熟悉設計到落地的快速迭代流程",
+
+    "home.contact": "聯絡方式",
+    "home.contact.email": "Email：{{email}}",
+    "home.contact.linkedin": "LinkedIn：{{url}}",
+    "home.recentUpdate": "最近更新",
+    "home.recentUpdate.all": "全部",
+    
+    "about.desc.1": "我是 Jing I，專長 React / Tailwind / shadcn/ui 與資料視覺化。",
+    "about.desc.2": "近期作品包含：二手交易分析儀表板（Recharts）與 React Gridstack Dashboard。",
+    "about.skills": "Skills",
+    "about.skills.work": "Work Skills（實務應用）",
+    "about.skills.self": "Exploration / Side Projects（研究與自學）",
+    "about.work": "Work Experience",
+    "about.work.period": "{{start}} – {{end}}",
+    
+    "footer.rights": "All rights reserved."
+}

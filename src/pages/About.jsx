@@ -1,38 +1,26 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-
-import { WORK_EXPERIENCES, SKILLS } from '@/constants'
-
-/* ===== 動畫設定 ===== */
-const tlContainer = {
-    hidden: { opacity: 0 },
-    show: (delayBase = 0) => ({
-        opacity: 1,
-        transition: { delay: delayBase, staggerChildren: 0.08, when: "beforeChildren" },
-    }),
-};
-
-/* ===== Timeline 容器（帶 whileInView） ===== */
-function Timeline({ children, delay = 0 }) {
-    return (
-        <div
-            className="relative border-l-2 border-gray-300/70 dark:border-gray-700/70 ml-3 space-y-8"
-        >
-            {children}
-        </div>
-    );
-}
+import { SKILLS } from '@/constants'
+import { WORK_EXPERIENCES } from '@/datas/experiences'
 
 
-function ExperienceItem({ title, company, start, end, bullets = [] }) {
+
+function ExperienceItem({ companyId }) {
     const [show, setShow] = useState(false);
+    const [t, i18n] = useTranslation(['about']);
 
+    const fmt = new Intl.DateTimeFormat(
+        i18n.language.startsWith("zh") ? "zh-TW" : "en-US",
+        { year: "numeric", month: "short" }
+    );
+    
     useEffect(() => {
         // Safari-safe：元件掛載後立刻觸發顯示
         const timer = setTimeout(() => setShow(true), 50);
@@ -54,8 +42,9 @@ function ExperienceItem({ title, company, start, end, bullets = [] }) {
             </span>
             <div className="md:grid md:grid-cols-[1fr_auto] md:items-start md:gap-3">
                 <h3 className="font-semibold text-base md:text-lg leading-snug">
-                    {company} — {title}
+                    {t(`about:work.${companyId}.company`)}
                 </h3>
+                
                 <span 
                     className="inline-flex md:block
                         text-xs md:text-xs
@@ -66,36 +55,46 @@ function ExperienceItem({ title, company, start, end, bullets = [] }) {
                         text-gray-700 dark:text-gray-200 md:opacity-70
                         md:self-start"
                 >
-                    <time dateTime={start}>{start}</time>
+                    <time dateTime={t(`about:work.${companyId}.start`)}>
+                        {fmt.format(new Date(t(`about:work.${companyId}.start`)))}
+                    </time>
                     <span aria-hidden="true" className="mx-1">–</span>
-                    <time dateTime={end}>{end}</time>
+                    <time dateTime={t(`about:work.${companyId}.end`)}>
+                        {fmt.format(new Date(t(`about:work.${companyId}.end`)))}
+                    </time>
                 </span>
             </div>
-            {bullets?.length > 0 && (
+            <h4 className="mt-1 text-sm md:text-base font-medium">{t(`about:work.${companyId}.title`)}</h4>
+            {t(`about:work.${companyId}.bullets`, { returnObjects: true })?.length > 0 ? (
                 <ul className="list-disc list-inside text-sm opacity-90 mt-2 space-y-1">
-                    {bullets.map((b) => <li key={b}>{b}</li>)}
-                </ul>
-            )}
+                    {t(`about:work.${companyId}.bullets`, 
+                        { returnObjects: true }).map((b, i) => (
+                            <li key={`${companyId}-bullet-${i}`}>{b}</li>
+                        )
+                    )}
+                </ul>) : null
+            }
         </motion.div>
-    );
+    );  
 }
 
 export default function About() {
+    const [t] = useTranslation(['common', 'about']);
     return (
         <section className="container max-w-4xl py-12 md:py-20 space-y-12 md:space-y-16">
             {/* Header */}
             <div className="max-w-3xl">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">About</h2>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{t('about:title')}</h2>
                 <p className="mt-3 opacity-80">
-                    我是 Jing I，專長 React / Tailwind / shadcn/ui 與資料視覺化。<br />
-                    近期作品包含：二手交易分析儀表板（Recharts）與 React Gridstack Dashboard。
+                    {t('common:about.desc.1')}<br />
+                    {t('common:about.desc.2')}
                 </p>
                 <div className="mt-5 flex items-center gap-3">
                     <Button asChild>
-                        <a href="/resume.pdf" target="_blank" rel="noreferrer">查看履歷（PDF）</a>
+                        <a href="/resume.pdf" target="_blank" rel="noreferrer">{t('common:cta.resume')}</a>
                     </Button>
                     <Button variant="secondary" asChild>
-                        <Link to="/projects">查看作品集</Link>
+                        <Link to="/projects">{t('common:cta.projects')}</Link>
                     </Button>
                 </div>
             </div>
@@ -103,12 +102,12 @@ export default function About() {
             {/* Skills */}
             <Card>
                 <CardHeader className="pb-2">
-                    <h2 className="text-xl font-semibold">Skills</h2>
+                    <h2 className="text-xl font-semibold">{t('common:about.skills')}</h2>
                 </CardHeader>
                 <CardContent className="pt-4 pb-4 md:pt-5 md:pb-5 space-y-6">
                     {/* Work Skills */}
                     <div>
-                        <h3 className="text-sm font-medium mb-3 opacity-80">Work Skills（實務應用）</h3>
+                        <h3 className="text-sm font-medium mb-3 opacity-80">{t('common:about.skills.work')}</h3>
                         <div className="flex flex-wrap gap-2">
                             {SKILLS.work.map((s) => (
                                 <Badge key={s} variant="outline" className="brand-outline text-[12px] px-2.5 py-1">
@@ -120,7 +119,7 @@ export default function About() {
                     <div className="h-px bg-gray-200 dark:bg-gray-700 my-4" />
                     {/* Exploration / Side Projects */}
                     <div>
-                        <h3 className="text-sm font-medium mb-3 opacity-80">Exploration / Side Projects（研究與自學）</h3>
+                        <h3 className="text-sm font-medium mb-3 opacity-80">{t('common:about.skills.self')}</h3>
                         <div className="flex flex-wrap gap-2">
                             {SKILLS.explore.map((s) => (
                                 <Badge key={s} variant="outline" className="brand-outline text-[12px] px-2.5 py-1">
@@ -135,24 +134,22 @@ export default function About() {
             {/* Work Experience */}
             <Card>
                 <CardHeader className="pb-2">
-                    <h2 className="text-xl font-semibold">Work Experience</h2>
+                    <h2 className="text-xl font-semibold">{t('common:about.work')}</h2>
                 </CardHeader>
                 <CardContent className="pt-4 pb-4 md:pt-5 md:pb-5">
-                    <Timeline>
+                    <div
+                        className="relative border-l-2 border-gray-300/70 dark:border-gray-700/70 ml-3 space-y-8"
+                    >
                         {
-                            WORK_EXPERIENCES.map(({ title, company, start, end, content }) => (
+                            WORK_EXPERIENCES.map(({ id }) => (
 
                                 <ExperienceItem
-                                    key={`${company}#${start}-${end}`}
-                                    title={title}
-                                    company={company}
-                                    bullets={content}
-                                    start={start}
-                                    end={end}
+                                    key={`${id}`}
+                                    companyId={id}
                                 />
                             ))
                         }
-                    </Timeline>
+                    </div>
                 </CardContent>
             </Card>
         </section>

@@ -1,0 +1,30 @@
+{
+    "title": "About",
+    "work": {
+        "acsi": {
+            "company": "Acer Cyber Security Inc.",
+            "title": "Project Engineer / Frontend Developer",
+            "start": "2020/02",
+            "end": "2025/04",
+            "bullets": [
+                "Led React frontend development, designing and extending features based on annual requirements, and building modular components to enhance reusability and efficiency.",
+                "Built security monitoring dashboards integrated with Highcharts, improving monitoring capabilities and visualization outcomes.",
+                "Developed customer portal and ticketing system, streamlining workflows and enhancing user experience.",
+                "Applied Docker containerization and CI/CD automation pipelines to ensure stability and reliability of project delivery."
+            ]
+        },
+        "hy": {
+            "company": "Hung Yang Soft. Tech. Co., Ltd.",
+            "title": "Technical Consultant",
+            "start": "2014/07",
+            "end": "2019/07",
+            "bullets": [
+                "Built client-facing applications and operation systems using Vue.js and AngularJS, optimizing processes and user experience.",
+                "Assisted in prototyping, frontend development, and API integration for banking and enterprise projects.",
+                "Supported architecture design, team onboarding, and technical training.",
+                "Contributed to large-scale telecom system development, focusing on API integration and data flow design."
+
+            ]
+        }
+    }
+}

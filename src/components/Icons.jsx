@@ -44,3 +44,48 @@ export const IconWork = (props) => (
     <path d="M4 7V5a2 2 0 0 1 2-2h4V1h4v2h4a2 2 0 0 1 2 2v2h-2V5H6v2H4zm16 2H4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
   </svg>
 );
+
+export const IconGlobe = (props) => {
+  return (
+    <svg
+      {...props}
+      className={`h-5 w-5 ${props.className ?? ""}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 0 0 20M12 2a15.3 15.3 0 0 1 0 20" />
+    </svg>
+  );
+}
+
+export const IconCheck = (props) => {
+  return (
+    <svg
+      {...props}
+      className={`h-4 w-4 ${props.className ?? ""}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
+export const IconDots = (props) => { 
+  return (
+  <svg {...props} viewBox="0 0 24 24" fill="currentColor">
+    <circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>
+  </svg>
+)}
+
+export const IconList = (props) => { 
+  return (
+  <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/>
+  </svg>
+)}
