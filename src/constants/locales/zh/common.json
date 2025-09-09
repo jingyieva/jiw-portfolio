@@ -36,6 +36,8 @@
     "about.skills.self": "Exploration / Side Projects（研究與自學）",
     "about.work": "Work Experience",
     "about.work.period": "{{start}} – {{end}}",
+
+    "update.title": "更新日誌",
     
     "footer.rights": "All rights reserved."
 }

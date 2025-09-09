@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { IconGithub as Github, IconHome as Home, IconUser as User, IconWork as Work } from "@/components/Icons";
 
+import { useLangPath } from "@/i18n/useLangPath";
 import { CONTACT_INFO } from "@/constants"
 import MobileMore from "@/components/MobileMore";
 import ThemeToggle from '@/components/ThemeToggle';
@@ -42,12 +43,13 @@ function NavItem({ to, label, end = false, icon }) {
 export default function Navbar() {
     const [t] = useTranslation();
     const [moreOpen, setMoreOpen] = useState(false);
+    const { build } = useLangPath();
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60 border-b border-gray-200 dark:border-gray-800">
             <div className="container h-14 flex items-center justify-between">
-                <Link aria-label="Home" to="/" className="hidden md:block font-semibold tracking-tight">{t('nav.header')}</Link>
-                <Link aria-label="Home" to="/" className="block md:hidden font-bold text-lg">
+                <Link aria-label="Home" to={build("/")} className="hidden md:block font-semibold tracking-tight">{t('nav.header')}</Link>
+                <Link aria-label="Home" to={build("/")} className="block md:hidden font-bold text-lg">
                     <img
                         src="/apple-touch-icon.png"
                         alt="JIW"
@@ -60,9 +62,9 @@ export default function Navbar() {
                 </Link>
 
                 <nav className="flex items-center gap-1 md:gap-2 text-sm">
-                    <NavItem to="/" label={t('nav.home')} icon={Home} end />
-                    <NavItem to="/about" label={t('nav.about')} icon={User} />
-                    <NavItem to="/projects" label={t('nav.projects')} icon={Work} />
+                    <NavItem to={build("/")} label={t('nav.home')} icon={Home} end />
+                    <NavItem to={build("about")} label={t('nav.about')} icon={User} />
+                    <NavItem to={build("projects")} label={t('nav.projects')} icon={Work} />
                     
                     <MobileMore open={moreOpen} setOpen={setMoreOpen} navbarHeight={56} />
 

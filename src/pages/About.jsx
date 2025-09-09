@@ -7,10 +7,9 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+import { useLangPath } from "@/i18n/useLangPath";
 import { SKILLS } from '@/constants'
 import { WORK_EXPERIENCES } from '@/datas/experiences'
-
-
 
 function ExperienceItem({ companyId }) {
     const [show, setShow] = useState(false);
@@ -64,7 +63,7 @@ function ExperienceItem({ companyId }) {
                     </time>
                 </span>
             </div>
-            <h4 className="mt-1 text-sm md:text-base font-medium">{t(`about:work.${companyId}.title`)}</h4>
+            <h4 className="mt-1 mb-3 text-sm md:text-base font-medium">{t(`about:work.${companyId}.title`)}</h4>
             {t(`about:work.${companyId}.bullets`, { returnObjects: true })?.length > 0 ? (
                 <ul className="list-disc list-inside text-sm opacity-90 mt-2 space-y-1">
                     {t(`about:work.${companyId}.bullets`, 
@@ -80,6 +79,8 @@ function ExperienceItem({ companyId }) {
 
 export default function About() {
     const [t] = useTranslation(['common', 'about']);
+    const { build } = useLangPath();
+    
     return (
         <section className="container max-w-4xl py-12 md:py-20 space-y-12 md:space-y-16">
             {/* Header */}
@@ -94,7 +95,7 @@ export default function About() {
                         <a href="/resume.pdf" target="_blank" rel="noreferrer">{t('common:cta.resume')}</a>
                     </Button>
                     <Button variant="secondary" asChild>
-                        <Link to="/projects">{t('common:cta.projects')}</Link>
+                        <Link to={build("projects")}>{t('common:cta.projects')}</Link>
                     </Button>
                 </div>
             </div>

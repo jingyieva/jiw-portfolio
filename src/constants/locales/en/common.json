@@ -37,5 +37,7 @@
     "about.work": "Work Experience",
     "about.work.period": "{{start}} – {{end}}",
 
+    "update.title": "Updates",
+
     "footer.rights": "All rights reserved."
 }
