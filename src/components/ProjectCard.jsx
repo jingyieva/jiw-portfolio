@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 import { FaGithub as Github } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 
-export default function ProjectCard({ title, description, tags = [], demo, repo }) {
+export default function ProjectCard({ title, description, tags = [], demo, repo, status }) {
 
     const ref = useRef(null);
     const isInView = useInView(ref, {
@@ -24,8 +24,11 @@ export default function ProjectCard({ title, description, tags = [], demo, repo 
             style={{ willChange: "opacity, transform" }}
         >
             <Card className="group">
-                <CardHeader className="pb-2">
+                <CardHeader className="pb-2 flex items-start justify-between gap-3">
                     <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
+                    {status === "archived" && (
+                        <span className="text-xs rounded-full px-2 py-1 border opacity-70">Archived</span>
+                    )}
                 </CardHeader>
 
                 <CardContent className="pt-0">

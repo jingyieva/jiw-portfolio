@@ -11,7 +11,8 @@
                 "Testing"
             ],
             "demo": "https://2nd-track-dashboard.vercel.app",
-            "repo": "https://github.com/jingyieva/2nd_track_dashboard"
+            "repo": "https://github.com/jingyieva/2nd_track_dashboard",
+            "year": 2025
         },
         {
             "title": "React Gridstack Dashboard",
@@ -21,7 +22,21 @@
                 "Gridstack.js"
             ],
             "demo": "https://react-gridstack-dashboard.vercel.app",
-            "repo": "https://github.com/jingyieva/react-gridstack-dashboard"
+            "repo": "https://github.com/jingyieva/react-gridstack-dashboard",
+            "year": 2025
+        },
+        {
+            "title": "Line Translation Bot",
+            "description": "即時翻譯的 LINE Bot，串接外部翻譯 API。最初建立於 2024，當前暫停維護。",
+            "tags": [
+                "Node.js",
+                "Express",
+                "Google Translate API",
+                "Line Messaging API"
+            ],
+            "repo": "https://github.com/jingyieva/line-translation-bot",
+            "year": 2024,
+            "status": "archived"
         }
     ]
 }

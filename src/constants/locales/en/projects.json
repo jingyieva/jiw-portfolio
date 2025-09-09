@@ -10,7 +10,8 @@
                 "Tailwind CSS"
             ],
             "demo": "https: //2nd-track-dashboard.vercel.app",
-            "repo": "https: //github.com/jingyieva/2nd_track_dashboard"
+            "repo": "https: //github.com/jingyieva/2nd_track_dashboard",
+            "year": 2025
         },
         {
             "title": "React Gridstack Dashboard",
@@ -21,7 +22,21 @@
                 "Tailwind CSS"
             ],
             "demo": "https: //react-gridstack-dashboard.vercel.app",
-            "repo": "https: //github.com/jingyieva/react-gridstack-dashboard"
+            "repo": "https: //github.com/jingyieva/react-gridstack-dashboard",
+            "year": 2025
+        },
+        {
+            "id": "line-translation-bot",
+            "title": "LINE Translation Bot",
+            "description": "A LINE Bot providing instant translation with external translation APIs. Originally built in 2024; currently unmaintained.",
+            "tags": [
+                "Node.js",
+                "LINE Messaging API",
+                "Google Translate API"
+            ],
+            "repo": "https://github.com/jingyieva/line-translation-bot",
+            "year": 2024,
+            "status": "archived"
         }
     ]
 }
