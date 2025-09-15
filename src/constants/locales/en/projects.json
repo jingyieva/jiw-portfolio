@@ -2,6 +2,17 @@
     "title": "Project",
     "projects": [
         {
+            "title": "Time To Clock Out",
+            "description": "A friendly chrome extension that reminds you to wrap up work after hours. Features customizable reminder time, interval, weekdays, and optional skipping of Taiwan public holidays.",
+            "tags": [
+                "Chrome Extension",
+                "JavaScript"
+            ],
+            "demo": "",
+            "repo": "https://github.com/jingyieva/time-to-clock-out",
+            "year": 2025
+        },
+        {
             "title": "Secondhand Trading Dashboard",
             "description": "A data visualization dashboard for secondhand trading platform, built with React and Recharts.",
             "tags": [
@@ -36,7 +47,7 @@
             ],
             "repo": "https://github.com/jingyieva/line-translation-bot",
             "year": 2024,
-            "status": "archived"
+            "status": "maintenance"
         }
     ]
 }

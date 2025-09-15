@@ -22,8 +22,9 @@ export default function ProjectCard({ title, description, tags = [], demo, repo,
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
             transition={{ duration: 0.4 }}
             style={{ willChange: "opacity, transform" }}
+            className="h-full" 
         >
-            <Card className="group">
+            <Card className="group h-full flex flex-col">
                 <CardHeader className="pb-2 flex items-start justify-between gap-3">
                     <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
                     {status === "archived" && (
@@ -31,7 +32,7 @@ export default function ProjectCard({ title, description, tags = [], demo, repo,
                     )}
                 </CardHeader>
 
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 flex-1">
                     <p className="text-sm opacity-80 mb-3">{description}</p>
 
                     {!!tags.length && (
@@ -44,8 +45,8 @@ export default function ProjectCard({ title, description, tags = [], demo, repo,
                 </CardContent>
 
                 {(demo || repo) && (
-                    <CardFooter className="pt-0">
-                        <div className="flex items-center gap-2">
+                    <CardFooter className="pt-0 mt-auto">
+                        <div className="flex items-center gap-2 min-h-10">
                             {demo && (
                                 <Button asChild className="gap-2">
                                     <a href={demo} target="_blank" rel="noreferrer">

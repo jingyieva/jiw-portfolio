@@ -1,5 +1,29 @@
 [
     {
+        "id": "2025-09-13-time-to-clock-out-preview",
+        "date": "2025-09-13",
+        "title": "Time To Clock Out：Chrome 擴充元件初版",
+        "summary": "下班提醒 Chrome 擴充元件初版，提供下班時間提醒，目前可透過下載後手動匯入使用（尚未上架 Chrome Web Store）。",
+        "tags": ["Chrome Extension", "Reminder", "Javascript", "Preview"],
+        "project": "time-to-clock-out",
+        "type": "preview",
+        "links": [
+            { "label": "Repo", "url": "https://github.com/jingyieva/time-to-clock-out" }
+        ]
+    },
+    {
+        "id": "2025-09-08-line-translation-bot-update",
+        "date": "2025-09-08",
+        "title": "Line Translation Bot：服務轉移與翻譯 API 修正",
+        "summary": "完成服務環境轉移，並修正翻譯 API 使用問題，提升穩定性與可用性。",
+        "tags": ["Line Bot", "Translation", "Update"],
+        "project": "line-translation-bot",
+        "type": "update",
+        "links": [
+            { "label": "Repo", "url": "https://github.com/jingyieva/line-translation-bot" }
+        ]
+    },
+    {
         "id": "2025-09-05-react-gridstack-dashboard-release",
         "date": "2025-09-05",
         "title": "Gridstack Dashboard：上線",
@@ -17,7 +41,7 @@
         "date": "2025-09-04",
         "title": "個人Website：v1 上線",
         "summary": "完成 Home / Projects / About，深淺色切換與 vercel 佈署。",
-        "tags": ["Portfolio", "vercel", "Tailwind"],
+        "tags": ["Portfolio", "vercel", "Tailwind", "Release"],
         "project": "jiw-portfolio",
         "type": "release",
         "links": [
@@ -45,7 +69,7 @@
         "summary": "加入 Storybook",
         "tags": ["Feature", "storybook", "MVP"],
         "project": "2nd-track-dashboard",
-        "type": "feature",
+        "type": "update",
         "links": [
             {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
         ]
@@ -69,7 +93,7 @@
         "summary": "加入訂單列表檢視功能",
         "tags": ["Feature", "MVP"],
         "project": "2nd-track-dashboard",
-        "type": "feature",
+        "type": "update",
         "links": [
             {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
         ]
@@ -79,9 +103,9 @@
         "date": "2025-07-31",
         "title": "二手交易儀表板：加入首頁",
         "summary": "首頁建立，加入基本數據追蹤圖表",
-        "tags": ["Feature", "Dashboard", "recharts", "MVP"],
+        "tags": ["Feature", "Dashboard", "recharts", "MVP", "Feature"],
         "project": "2nd-track-dashboard",
-        "type": "feature",
+        "type": "update",
         "links": [
             {"label": "Repo", "url": "https://github.com/jingyieva/2nd_track_dashboard"}
         ]

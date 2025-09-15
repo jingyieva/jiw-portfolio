@@ -2,6 +2,16 @@
     "title": "Project",
     "projects": [
         {
+            "title": "Time To Clock Out",
+            "description": "一個貼心的 Chrome 擴充功能，幫助使用者在下班時間後定期跳出提醒，支援自訂提醒時間、間隔、提醒日與跳過台灣國定假日。",
+            "tags": [
+                "Chrome Extension",
+                "JavaScript"
+            ],
+            "repo": "https://github.com/jingyieva/time-to-clock-out",
+            "year": 2025
+        },
+        {
             "title": "二手交易分析儀表板",
             "description": "React + Tailwind + Recharts，用於二手交易平台的資料視覺化儀表板。",
             "tags": [
