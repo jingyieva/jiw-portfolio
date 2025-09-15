@@ -39,7 +39,7 @@
         {
             "id": "line-translation-bot",
             "title": "LINE Translation Bot",
-            "description": "A LINE Bot providing instant translation with external translation APIs. Originally built in 2024; currently unmaintained.",
+            "description": "A LINE Bot providing instant translation with external translation APIs. Originally built in 2024, now restored and usable, maintained at a lower frequency.",
             "tags": [
                 "Node.js",
                 "LINE Messaging API",
