@@ -27,8 +27,8 @@ export default function ProjectCard({ title, description, tags = [], demo, repo,
             <Card className="group h-full flex flex-col">
                 <CardHeader className="pb-2 flex items-start justify-between gap-3">
                     <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
-                    {status === "archived" && (
-                        <span className="text-xs rounded-full px-2 py-1 border opacity-70">Archived</span>
+                    {status !== "active" && (
+                        <span className="text-xs rounded-full px-2 py-1 border opacity-70 capitalize">{status}</span>
                     )}
                 </CardHeader>
 
