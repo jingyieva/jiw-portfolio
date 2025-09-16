@@ -8,17 +8,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 import { useLangPath } from "@/i18n/useLangPath";
-import { SKILLS } from '@/constants'
+import { SKILLS, MONTH_NAMES } from '@/constants'
 import { WORK_EXPERIENCES } from '@/datas/experiences'
+
+function formatYearMonth(str, lang) {
+  const [y, m] = str.split("/");
+
+  return lang.startsWith("zh") ? `${y}年${parseInt(m)}月` : `${MONTH_NAMES.en[parseInt(m) - 1]} ${y}`;
+}
 
 function ExperienceItem({ companyId }) {
     const [show, setShow] = useState(false);
     const [t, i18n] = useTranslation(['about']);
-
-    const fmt = new Intl.DateTimeFormat(
-        i18n.language.startsWith("zh") ? "zh-TW" : "en-US",
-        { year: "numeric", month: "short" }
-    );
     
     useEffect(() => {
         // Safari-safe：元件掛載後立刻觸發顯示
@@ -55,11 +56,11 @@ function ExperienceItem({ companyId }) {
                         md:self-start"
                 >
                     <time dateTime={t(`about:work.${companyId}.start`)}>
-                        {fmt.format(new Date(t(`about:work.${companyId}.start`)))}
+                        {formatYearMonth(t(`about:work.${companyId}.start`), i18n.language)}
                     </time>
                     <span aria-hidden="true" className="mx-1">–</span>
                     <time dateTime={t(`about:work.${companyId}.end`)}>
-                        {fmt.format(new Date(t(`about:work.${companyId}.end`)))}
+                        {formatYearMonth(t(`about:work.${companyId}.end`), i18n.language)}
                     </time>
                 </span>
             </div>
