@@ -11,7 +11,7 @@
         content="Jing I Wu, FE Engineer, Portfolio, React, Tailwind, Data Viz, Recharts, React Gridstack" />
     <meta name="author" content="Jing I Wu" />
     <link rel="canonical" href="https://jiw-portfolio.vercel.app/" />
-    
+
     <!-- Open Graph -->
     <meta property="og:site_name" content="JIW Portfolio" />
     <meta property="og:url" content="https://jiw-portfolio.vercel.app/" />
@@ -24,13 +24,17 @@
     <meta name="twitter:title" content="Jing I Wu — Portfolio" />
     <meta name="twitter:description" content="React / Tailwind / Data Viz. Projects & Experiences" />
     <meta name="twitter:image" content="https://jiw-portfolio.vercel.app/og.jpg" />
-    
+
     <!-- favicon & touch icons -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
     <meta name="theme-color" content="#4f46e5" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="manifest" href="/site.webmanifest" />
+
     <script>
         (function () {
             const STORAGE_KEY = 'theme';
@@ -38,16 +42,17 @@
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const theme = user || (systemDark ? 'dark' : 'light');
             if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
+                document.documentElement.classList.add('dark');
             } else {
-            document.documentElement.classList.remove('dark');
+                document.documentElement.classList.remove('dark');
             }
         })();
     </script>
 </head>
 
 <body>
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-white/90 dark:focus:bg-gray-900/90 focus:px-3 focus:py-2 focus:rounded-md">
+    <a href="#main"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-white/90 dark:focus:bg-gray-900/90 focus:px-3 focus:py-2 focus:rounded-md">
         Skip to content
     </a>
     <div id="root"></div>

@@ -51,7 +51,7 @@ export default function Navbar() {
                 <Link aria-label="Home" to={build("/")} className="hidden md:block font-semibold tracking-tight">{t('nav.header')}</Link>
                 <Link aria-label="Home" to={build("/")} className="block md:hidden font-bold text-lg">
                     <img
-                        src="/apple-touch-icon.png"
+                        src="/icons/apple-touch-icon.png"
                         alt="JIW"
                         width="24"
                         height="24"
