@@ -1,16 +1,19 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from 'react-router-dom';
+
+import Fallback from "@/components/Fallback";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NotFound from "@/pages/404";
 import LanguageLayout from "@/routes/LanguageLayout";
+import { PAGE_PATHS, PAGE_COMPONENTS } from "@/constants/routes";
 
-const Home = lazy(() => import("@/pages/Home"));
-const Projects = lazy(() => import("@/pages/Projects"));
-const About = lazy(() => import("@/pages/About"));
-const Updates = lazy(() => import("@/pages/Updates"));
 
-const Fallback = <div className="p-6 opacity-70">Loading…</div>;
+const render = (path) => {
+    const Comp = PAGE_COMPONENTS[path];
+
+    return <Comp />
+}
 
 export default function App() {
     return (
@@ -18,15 +21,35 @@ export default function App() {
             <Navbar />
             <main id="main" className="flex-1">
                 <Routes>
-                    <Route path=":lang?" element={<Suspense fallback={Fallback}><LanguageLayout /></Suspense>}>
-                        <Route index element={
-                            <Suspense fallback={Fallback}><Home /></Suspense>
-                        } />
-                        <Route path="projects" element={<Suspense fallback={Fallback}><Projects /></Suspense>} />
-                        <Route path="about" element={<Suspense fallback={Fallback}><About /></Suspense>} />
-                        <Route path="updates" element={<Suspense fallback={Fallback}><Updates /></Suspense>} />
+                    <Route path="404/:lang?" element={<Suspense fallback={<Fallback />}><LanguageLayout /></Suspense>}>
+                        <Route index element={<NotFound />} />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
+                    <Route path=":lang?" element={<Suspense fallback={<Fallback />}><LanguageLayout /></Suspense>}>
+                        {PAGE_PATHS.map(path => (
+                            path === "" ? (
+                                <Route
+                                    key="index"
+                                    index
+                                    element={
+                                        <Suspense fallback={<Fallback />}>
+                                            {render("")}
+                                        </Suspense>
+                                    }
+                                />
+                            ) : (
+                                <Route
+                                    key={path}
+                                    path={path}
+                                    element={
+                                        <Suspense fallback={<Fallback />}>
+                                            {render(path)}
+                                        </Suspense>
+                                    }
+                                />
+                            )
+                        ))}
+                        <Route path="*" element={<NotFound />} />
+                    </Route>
                 </Routes>
             </main>
             <Footer />

@@ -53,8 +53,8 @@ export default function Navbar() {
                     <img
                         src="/icons/apple-touch-icon.png"
                         alt="JIW"
-                        width="24"
-                        height="24"
+                        width="50"
+                        height="50"
                         className="w-6 h-6"
                         loading="eager"
                         decoding="async"

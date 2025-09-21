@@ -39,5 +39,10 @@
 
     "update.title": "Updates",
 
-    "footer.rights": "All rights reserved."
+    "footer.rights": "All rights reserved.",
+
+    "404.title": "Page not found.",
+    "404.desc": "The page is not existed or has been moved away.",
+    "404.back": "Home"
+
 }

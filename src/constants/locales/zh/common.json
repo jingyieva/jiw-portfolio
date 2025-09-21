@@ -39,5 +39,9 @@
 
     "update.title": "更新日誌",
     
-    "footer.rights": "All rights reserved."
+    "footer.rights": "All rights reserved.",
+
+    "404.title": "頁面不存在",
+    "404.desc": "這個頁面不存在，或已被移動。",
+    "404.back": "回首頁"
 }
