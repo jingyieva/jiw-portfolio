@@ -1,13 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { useTheme } from "@/contexts/ThemeContext";
 import { useLangPath } from "@/i18n/useLangPath";
 import { Button } from "@/components/ui/button";
+import ThemeLogo from "@/components/ThemeLogo";
 
 export default function NotFound() {
     const { build } = useLangPath();
     const [t] = useTranslation();
+    const { isDark } = useTheme();
+
+    const src = isDark ? '/logo-light-256.webp' : '/logo-dark-256.webp' ;
+    const srcSet =  isDark ? '/logo-light-128.webp 128w, /logo-light-256.webp 256w' 
+        : '/logo-dark-128.webp 128w, /logo-dark-256.webp 256w';
 
     useEffect(() => {
         const prevTitle = document.title;
@@ -43,15 +50,10 @@ export default function NotFound() {
         <section className="container max-w-4xl py-24 text-center space-y-4">
             {/* Logo */}
             <div className="flex justify-center">
-                <img
-                    src="/logo-light.png"
-                    alt="Not Found"
-                    className="w-48 h-48 hidden dark:block"
-                />
-                <img
-                    src="/logo-dark.png"
-                    alt="Not Found"
-                    className="w-48 h-48 dark:hidden"
+                <ThemeLogo
+                    name={`${isDark ? 'light' : 'dark'}-404-logo`}
+                    src={src}
+                    srcSet={srcSet}
                 />
             </div>
             <h1 className="text-3xl font-bold">{t('404.title')}</h1>

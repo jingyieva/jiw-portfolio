@@ -35,6 +35,13 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="manifest" href="/site.webmanifest" />
 
+    <link rel="preload" as="image" href="/logo-light-256.webp"
+        imagesrcset="/logo-light-128.webp 128w, /logo-light-256.webp 256w" imagesizes="(max-width:640px) 128px, 256px"
+        type="image/webp" media="(prefers-color-scheme: dark)" />
+    <link rel="preload" as="image" href="/logo-dark-256.webp"
+        imagesrcset="/logo-dark-128.webp 128w, /logo-dark-256.webp 256w" imagesizes="(max-width:640px) 128px, 256px"
+        type="image/webp" media="(prefers-color-scheme: light)" />
+
     <script>
         (function () {
             const STORAGE_KEY = 'theme';
