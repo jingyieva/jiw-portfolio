@@ -28,6 +28,7 @@ function NavItem({ to, label, end = false, icon }) {
                     <NavLink
                         to={to}
                         end={end}
+                        aria-label={label}
                         className={({ isActive }) =>
                             `md:hidden p-2 transition ${isActive ? "text-[var(--color-brand-600)]" : "opacity-80"}`
                         }

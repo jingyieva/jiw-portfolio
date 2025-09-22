@@ -17,6 +17,7 @@ export default function Segmented({ value, onChange, options, displayClassname =
                         key={opt.value}
                         type="button"
                         aria-pressed={active}
+                        aria-label={opt.label}
                         onClick={() => onChange(opt.value)}
                         className={cn(
                             "h-11 rounded-2xl border text-sm font-medium transition",
