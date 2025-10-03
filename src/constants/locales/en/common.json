@@ -21,7 +21,7 @@
     ],
 
     "home.skills": "Core Skills",
-    "home.skills.desc": "React / Tailwind / Jest / Vite\nProficient in rapid iteration from design to delivery",
+    "home.skills.desc": "Specialized in React, with hands-on experience in Tailwind, shadcn/ui, and Recharts. Recently integrating Jest and GitHub Actions for improved test coverage and CI/CD efficiency.",
 
     "home.contact": "Contact",
     "home.contact.email": "Email: {{email}}",

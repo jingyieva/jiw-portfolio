@@ -21,7 +21,7 @@
     ],
 
     "home.skills": "技術專長",
-    "home.skills.desc": "React / Tailwind / Jest / Vite\n熟悉設計到落地的快速迭代流程",
+    "home.skills.desc": "React 為主力技術，近期專注於 Tailwind、shadcn/ui 與 Recharts 等現代前端工具的應用實作，並導入 Jest + GitHub Actions 強化測試與部署流程。",
 
     "home.contact": "聯絡方式",
     "home.contact.email": "Email：{{email}}",
