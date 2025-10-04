@@ -52,56 +52,60 @@ export default function MobileMore({
             )}
 
             {/* 面板：固定在 Navbar 下方，滿版寬度 */}
-            <div
-                style={{ top: navbarHeight }}
-                className={cn(
-                    "fixed left-0 right-0 z-[70] pointer-events-none", // 讓容器不吃事件
-                    open ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-4",
-                    "border-b shadow-sm",
-                    "transition-all duration-200")}
-            >
-                <div
-                    ref={panelRef}
-                    className="w-full border-t bg-background/95 backdrop-blur
-                        shadow-lg pointer-events-auto"
-                >
-                    <div className="p-3 space-y-4">
-                        {/* Theme */}
-                        <div>
-                            <span className="text-sm font-medium">Theme</span>
-                            <div onClick={() => setOpen(false)}>
-                                <ThemeToggle />
+            {
+                open && (
+                    <div
+                        style={{ top: navbarHeight }}
+                        className={cn(
+                            "fixed left-0 right-0 z-[70] pointer-events-none", // 讓容器不吃事件
+                            open ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-4",
+                            "border-b shadow-sm",
+                            "transition-all duration-200")}
+                    >
+                        <div
+                            ref={panelRef}
+                            className="w-full border-t bg-background/95 backdrop-blur
+                                shadow-lg pointer-events-auto"
+                        >
+                            <div className="p-3 space-y-4">
+                                {/* Theme */}
+                                <div>
+                                    <span className="text-sm font-medium">Theme</span>
+                                    <div onClick={() => setOpen(false)}>
+                                        <ThemeToggle />
+                                    </div>
+                                </div>
+
+                                <div className="h-px bg-border/60" />
+
+                                {/* Language */}
+                                <div>
+                                    <span className="text-sm font-medium">Language</span>
+                                    <LanguageSegment onPicked={() => setOpen(false)} />
+                                </div>
+
+                                <div className="h-px bg-border/60" />
+
+                                {/* GitHub */}
+                                <div className="flex items-center justify-between">
+                                    <span className="text-sm font-medium">Github</span>
+                                    <a
+                                        href={CONTACT_INFO.github}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        aria-label="Open GitHub"
+                                        className="h-11 flex items-center gap-2 px-4 py-2 text-[var(--color-brand-600)]  hover:bg-accent transition"
+                                        onClick={() => setOpen(false)}
+                                    >
+                                        <Github className="w-5 h-5" />
+                                        <span>Open</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="h-px bg-border/60" />
-
-                        {/* Language */}
-                        <div>
-                            <span className="text-sm font-medium">Language</span>
-                            <LanguageSegment onPicked={() => setOpen(false)} />
-                        </div>
-
-                        <div className="h-px bg-border/60" />
-
-                        {/* GitHub */}
-                        <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium">Github</span>
-                            <a
-                                href={CONTACT_INFO.github}
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="Open GitHub"
-                                className="h-11 flex items-center gap-2 px-4 py-2 text-[var(--color-brand-600)]  hover:bg-accent transition"
-                                onClick={() => setOpen(false)}
-                            >
-                                <Github className="w-5 h-5" />
-                                <span>Open</span>
-                            </a>
-                        </div>
                     </div>
-                </div>
-            </div>
+                )
+            }
         </>
     );
 }
