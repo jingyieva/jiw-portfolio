@@ -1,5 +1,4 @@
 export const CONTACT_INFO = {
-
     email: 'jingyiwu.823@gmail.com',
     linkedIn: 'https://www.linkedin.com/in/eva-wu-1470b9123',
     github: 'https://github.com/jingyieva'
@@ -16,7 +15,9 @@ export const SKILLS = {
         "Chart.js",
         "Docker",
         "CI/CD",
+        "PostgreSQL",
         "MySQL / OracleDB",
+        "CouchDB"
     ],
     explore: [ 
         "Recharts",

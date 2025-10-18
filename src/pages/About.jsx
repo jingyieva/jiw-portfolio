@@ -93,7 +93,7 @@ export default function About() {
                 </p>
                 <div className="mt-5 flex items-center gap-3">
                     <Button asChild>
-                        <a href="/resume.pdf" target="_blank" rel="noreferrer">{t('common:cta.resume')}</a>
+                        <a href="/resume_jingiwu.pdf" target="_blank" rel="noreferrer">{t('common:cta.resume')}</a>
                     </Button>
                     <Button variant="secondary" asChild>
                         <Link to={build("projects")}>{t('common:cta.projects')}</Link>
